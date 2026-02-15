@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import requests
 import schedule
@@ -241,7 +242,7 @@ if __name__ == "__main__":
     if os.getenv('GITHUB_ACTIONS'):
         print("🚀 Running in GitHub Actions mode (Single execution)")
         job()
-        exit(0)
+        sys.exit(0)
 
     # Local: Run loop
     print(f"🤖 GM Bot Online. Monitoring... (Press Ctrl+C to stop)")
