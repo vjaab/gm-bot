@@ -237,9 +237,13 @@ if __name__ == "__main__":
     if not BOT_TOKEN:
          print("🚨 WARNING: TELEGRAM_BOT_TOKEN is missing.")
 
-    # Schedule for 9:00 AM IST
-    schedule.every().day.at("09:00").do(job)
-    
+    # CI/CD: Run once and exit
+    if os.getenv('GITHUB_ACTIONS'):
+        print("🚀 Running in GitHub Actions mode (Single execution)")
+        job()
+        exit(0)
+
+    # Local: Run loop
     print(f"🤖 GM Bot Online. Monitoring... (Press Ctrl+C to stop)")
     
     # job() # Run once for testing
