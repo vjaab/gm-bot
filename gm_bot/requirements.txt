@@ -1,3 +1,9 @@
 requests
 schedule
 pytz
+feedparser
+google-generativeai
+beautifulsoup4
+python-dotenv
+
+google-genai
